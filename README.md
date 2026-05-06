@@ -1,6 +1,6 @@
 # Epidex
 
-AI-Powered Skin Disease Detection System Frontend
+Frontend for AI-Powered Skin Disease Detection System 
 
 ## Overview
 
