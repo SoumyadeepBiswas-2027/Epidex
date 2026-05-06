@@ -1,16 +1,114 @@
-# React + Vite
+# Epidex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-Powered Skin Disease Detection System Frontend
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Epidex is a modern frontend application built for an AI-based skin disease detection system. The platform is designed to help users upload skin images and receive AI-assisted disease analysis through an intuitive and responsive interface.
 
-## React Compiler
+This repository contains the frontend implementation of the Epidex platform.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Clean and responsive UI
+* AI skin disease detection interface
+* Image upload functionality
+* Fast and lightweight frontend
+* Modern React + Vite architecture
+* Mobile-friendly design
+* Component-based structure
+* Easy backend/API integration
+
+---
+
+## Tech Stack
+
+* React.js
+* Vite
+* JavaScript
+* CSS
+* HTML5
+
+---
+
+## Project Structure
+
+```bash
+Epidex/
+│
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── layout.css
+│
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SoumyadeepBiswas-2027/Epidex.git
+```
+
+Move into the project folder:
+
+```bash
+cd Epidex
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## Future Scope
+
+* Real-time AI prediction integration
+* Disease confidence scoring
+* Medical report generation
+* Doctor consultation support
+* Multi-language support
+* User authentication system
+* Prediction history tracking
+
+---
+
+## Purpose
+
+The goal of Epidex is to create an accessible AI-assisted healthcare platform that can support early skin disease identification and improve awareness using artificial intelligence.
+
+---
+
+## Author
+
+Soumyadeep Biswas
+
+GitHub: [https://github.com/SoumyadeepBiswas-2027](https://github.com/SoumyadeepBiswas-2027)
+
+---
+
+## License
+
+This project is open-source and available under
