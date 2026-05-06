@@ -1,0 +1,145 @@
+/* ─── Upload Zone ────────────────────────────────────────────── */
+.upload-zone {
+  border: 2px dashed rgba(0,180,255,0.25);
+  border-radius: var(--radius-inner);
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: rgba(0,180,255,0.02);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.upload-zone:hover,
+.upload-zone.drag-over {
+  border-color: var(--accent-green);
+  background: var(--accent-green-dim);
+  box-shadow: inset 0 0 30px rgba(0,255,136,0.04);
+}
+
+.upload-zone input { display: none; }
+
+/* ─── Icon ───────────────────────────────────────────────────── */
+.upload-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(0,180,255,0.1);
+  border: 1px solid rgba(0,180,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.upload-zone:hover .upload-icon {
+  background: rgba(0,255,136,0.1);
+  border-color: rgba(0,255,136,0.3);
+  transform: scale(1.05);
+}
+
+/* ─── Text ───────────────────────────────────────────────────── */
+.upload-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.upload-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.upload-formats {
+  display: flex;
+  gap: 8px;
+}
+
+/* ─── Preview ────────────────────────────────────────────────── */
+.preview-container {
+  position: relative;
+  border-radius: var(--radius-inner);
+  overflow: hidden;
+  min-height: 260px;
+  background: var(--bg-secondary);
+}
+
+.preview-image {
+  width: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5,10,15,0.9) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.preview-info {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-green);
+  letter-spacing: 1px;
+}
+
+/* ─── Scan Line ──────────────────────────────────────────────── */
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+  animation: scan 2.5s ease-in-out infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ─── Corner Brackets ────────────────────────────────────────── */
+.corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+}
+
+.corner.tl { top: 10px;    left: 10px;  border-top:    2px solid var(--accent-green); border-left:   2px solid var(--accent-green); border-radius: 2px 0 0 0; }
+.corner.tr { top: 10px;    right: 10px; border-top:    2px solid var(--accent-green); border-right:  2px solid var(--accent-green); border-radius: 0 2px 0 0; }
+.corner.bl { bottom: 10px; left: 10px;  border-bottom: 2px solid var(--accent-green); border-left:   2px solid var(--accent-green); border-radius: 0 0 0 2px; }
+.corner.br { bottom: 10px; right: 10px; border-bottom: 2px solid var(--accent-green); border-right:  2px solid var(--accent-green); border-radius: 0 0 2px 0; }
+
+/* ─── Remove Button ──────────────────────────────────────────── */
+.preview-remove {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(5,10,15,0.8);
+  border: 1px solid rgba(255,77,109,0.3);
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.preview-remove:hover {
+  background: rgba(255,77,109,0.15);
+  border-color: var(--danger);
+}

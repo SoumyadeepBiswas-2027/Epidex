@@ -1,0 +1,58 @@
+.hero {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+/* ─── Eyebrow ────────────────────────────────────────────────── */
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  height: 1px;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, var(--accent-green));
+}
+
+.hero-eyebrow::after {
+  transform: scaleX(-1);
+}
+
+/* ─── Title ──────────────────────────────────────────────────── */
+.hero-title {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  background: linear-gradient(160deg, #e8f4ff 30%, var(--accent-blue) 70%, var(--accent-green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Subtitle ───────────────────────────────────────────────── */
+.hero-sub {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-title { font-size: 32px; }
+  .hero-sub   { font-size: 15px; }
+}

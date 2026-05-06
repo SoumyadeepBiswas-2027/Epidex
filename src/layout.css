@@ -1,0 +1,106 @@
+/* ─── Input Grid ─────────────────────────────────────────────── */
+.input-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* centers children horizontally */
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* ─── Analyse Button ─────────────────────────────────────────── */
+.analyse-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 9px;
+}
+
+.btn-analyse {
+  position: relative;
+  padding: 18px 56px;
+  border-radius: 14px;
+  background: transparent;
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.btn-analyse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,255,136,0.12), rgba(0,180,255,0.08));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-analyse:hover::before { opacity: 1; }
+
+.btn-analyse:hover {
+  box-shadow: 0 0 30px rgba(0,255,136,0.25), inset 0 0 20px rgba(0,255,136,0.05);
+  transform: translateY(-1px);
+}
+
+.btn-analyse:active { transform: translateY(0); }
+
+.btn-analyse.loading {
+  pointer-events: none;
+  color: transparent;
+}
+
+.btn-analyse.loading::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--accent-green);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 0.7s linear infinite;
+}
+
+.btn-clear {
+  padding: 18px 32px;
+  border-radius: 14px;
+  background: transparent;
+  border: 1px solid rgba(255,77,109,0.25);
+  color: var(--danger);
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  opacity: 0.7;
+}
+
+.btn-clear:hover {
+  background: rgba(255,77,109,0.08);
+  border-color: var(--danger);
+  opacity: 1;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .input-grid { grid-template-columns: 1fr; }
+  .analyse-section { flex-direction: column; }
+  .btn-analyse, .btn-clear { width: 100%; }
+}
+
+
+/* Upload card — small centered box on top */
+.card:first-child {
+  width: 420px;
+  max-width: 100%;
+}
