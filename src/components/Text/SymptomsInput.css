@@ -32,31 +32,52 @@
 /* ─── Footer Row ─────────────────────────────────────────────── */
 .symptoms-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+/* ─── Descriptor Groups ──────────────────────────────────────── */
+.descriptor-groups {
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  margin-top: 14px;
+}
+
+.descriptor-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.descriptor-group-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-left: 2px;
 }
 
 /* ─── Quick-Select Chips ─────────────────────────────────────── */
 .symptom-chips {
   display: flex;
-  gap: 8px;
+  gap: 7px;
   flex-wrap: wrap;
 }
 
 .symptom-chip {
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 100px;
   background: rgba(0,180,255,0.06);
   border: 1px solid rgba(0,180,255,0.15);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
   font-family: 'JetBrains Mono', monospace;
   letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
 .symptom-chip:hover,
@@ -72,7 +93,7 @@
   font-size: 11px;
   color: var(--text-muted);
   letter-spacing: 0.5px;
-  white-space: nowrap;
+  text-align: right;
 }
 
 /* ─── Responsive ─────────────────────────────────────────────── */

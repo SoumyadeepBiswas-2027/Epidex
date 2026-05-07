@@ -1,8 +1,23 @@
 import "./SymptomsInput.css";
 
-const QUICK_SYMPTOMS = [
-  "Itching", "Redness", "Peeling", "Swelling",
-  "Burning", "Dryness", "Blisters", "Scaling", "Discoloration",
+// Most clinically common descriptors, grouped by category
+const DESCRIPTOR_GROUPS = [
+  {
+    label: "Lesion Type",
+    tags: ["Macule", "Papule", "Plaque", "Nodule", "Vesicle", "Pustule", "Bulla", "Wheal", "Cyst", "Ulcer"],
+  },
+  {
+    label: "Surface / Texture",
+    tags: ["Scale", "Crust", "Erosion", "Fissure", "Excoriation", "Lichenification", "Hyperkeratotic plaques", "Scar", "Xerosis"],
+  },
+  {
+    label: "Colour",
+    tags: ["Erythema", "Brown (Hyperpigmentation)", "White (Hypopigmentation)", "Purpura/Petechiae", "Pigmented", "Yellow", "Gray", "Salmon"],
+  },
+  {
+    label: "Other Features",
+    tags: ["Edema", "Exudate", "Induration", "Atrophy", "Telangiectasia", "Striae", "Hair Patch", "Pitted Nail", "Discolored Nail"],
+  },
 ];
 
 export default function SymptomsInput({ symptoms, onSymptomsChange, activeTags, onTagToggle }) {
@@ -20,15 +35,22 @@ export default function SymptomsInput({ symptoms, onSymptomsChange, activeTags, 
       />
 
       <div className="symptoms-footer">
-        <div className="symptom-chips">
-          {QUICK_SYMPTOMS.map((tag) => (
-            <button
-              key={tag}
-              className={`symptom-chip${activeTags.includes(tag) ? " active" : ""}`}
-              onClick={() => onTagToggle(tag)}
-            >
-              {tag}
-            </button>
+        <div className="descriptor-groups">
+          {DESCRIPTOR_GROUPS.map((group) => (
+            <div className="descriptor-group" key={group.label}>
+              <span className="descriptor-group-label">{group.label}</span>
+              <div className="symptom-chips">
+                {group.tags.map((tag) => (
+                  <button
+                    key={tag}
+                    className={`symptom-chip${activeTags.includes(tag) ? " active" : ""}`}
+                    onClick={() => onTagToggle(tag)}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 
